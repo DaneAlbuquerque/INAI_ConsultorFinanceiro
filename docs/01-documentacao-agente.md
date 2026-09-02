@@ -39,6 +39,14 @@ INAI - Consultoria de Investimentos Inteligente
 ## Arquitetura
 ### Diagrama
 
+### Componentes
+
+|Componente | Descrição |
+|------|------|
+| Interface | |
+| LLM | |
+| Base de Conhecimento| |
+
 ------
 ## Segurança e Anti-Alucinação
 ### Estratégias Adotadas
