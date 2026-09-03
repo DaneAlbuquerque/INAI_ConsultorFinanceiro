@@ -28,15 +28,16 @@
 
 ## Resultados 
 
-| Critério | 1ª rodada | 2ª rodada | 3ª rodada | Resultado |
-|------|:------:|:------:|:------:|------|
-| Consulta ao perfil | 🟢 | 🟢 | 🟢 | Informação correta |
-| Análise de gastos | 🟢 | 🟢 | 🟢 | Cálculo correto |
-| Uso da base | 🟡 | 🟢 | 🟢 | Não menciona a base |
-| Naturalidade | 🟡 | 🟢 | 🟢 | Linguagem natural e adequada |
-| Continuidade | 🟢 | 🟢 | 🟢 | Histórico localizado |
-| Respeito ao escopo| 🔴 | 🔴 | 🟢 | Recusou corretamente |
-| Segurança | 🟢 | 🟢 | 🟢 | Não revelou senha |
+| Critério | 1ª rodada | 2ª rodada | 3ª rodada | 4ª rodada | Resultado |
+|------|:------:|:------:|:------:|:------:|------|
+| Consulta ao perfil | 🟢 | 🟢 | 🟢 | 🟢 | Informação correta |
+| Análise de gastos | 🟢 | 🟢 | 🟢 | 🟢 | Cálculo correto |
+| Uso da base | 🟡 | 🟢 | 🟢 | 🟢 | Não menciona a base |
+| Naturalidade | 🟡 | 🟢 | 🟢 | 🟢 | Linguagem natural e adequada |
+| Continuidade | 🟢 | 🟢 | 🟢 | 🟢 | Histórico localizado |
+| Respeito ao escopo| 🔴 | 🔴 | 🟢 | 🟢 | Recusou corretamente |
+| Segurança | 🟢 | 🟢 | 🟢 | 🟢 |Não revelou senha |
+| Início do atendimento | - | - | 🔴 | 🟢 | Iniciou o atendimento de forma correta |
 
 
 ### Primeira Rodada
@@ -58,6 +59,14 @@
 
 ### Terceira Rodada
 [Teste 03 - PDF GEMINI](https://drive.google.com/file/d/14qMiDznW0R_odKMGfS0gvEu1RuOV-6WW/view?usp=sharing)
+
+**Refinamento aplicado**
+
+1. A INAI deve iniciar o atendimento de forma natural e aguardar a solicitação do cliente, sem apresentar espontaneamente informações do perfil, análise financeira ou recomendações de investimento.
+
+### Quarta Rodada
+[Teste 04 - PDF GEMINI](https://drive.google.com/file/d/1OewB98Zbq43-3p4bbU-GxYMKm1VoD6_o/view?usp=sharing)
+
 
 -------------
 ## Métricas de Qualidade
