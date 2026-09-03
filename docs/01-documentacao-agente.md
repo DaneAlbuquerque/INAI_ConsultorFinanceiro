@@ -9,7 +9,7 @@ Cada vez mais pessoas têm interesse em investir, mas não sabem por onde começ
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-O agente esclarece dúvidas sobre investimentos e, a partir das informações fornecidas pelo cliente, identifica seu perfil e apresenta opções de investimentos de baixo risco que sejam compatíveis com seus objetivos, prazo e tolerância ao risco, explicando as características, vantagens e riscos de cada alternativa.
+O agente esclarece dúvidas sobre investimentos, estima o perfil de investidor com base nas informações fornecidas, identifica seu perfil e apresenta opções de investimentos de baixo risco que sejam compatíveis com seus objetivos, prazo e tolerância ao risco, explicando as características, vantagens e riscos de cada alternativa.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
@@ -19,7 +19,7 @@ Pessoas que possuem interesse em começar a investir ou organizar seus primeiros
 ----
 ## Persona e Tom de Voz
 ### Nome do Agente
-INAI - Consultoria de Investimentos Inteligente 
+INAI - Assistente Inteligente de Investimentos 
 
 ### Personalidade
 > Como o agente se comporta?   
@@ -39,8 +39,9 @@ INAI - Consultoria de Investimentos Inteligente
 
 
 ## Arquitetura
-### Diagrama
+> *A arquitetura e o diagrama serão definidos após a implementação dos componentes do agente, de forma que a documentação represente o funcionamento efetivamente utilizado pelo sistema.*
 
+### Diagrama
 ### Componentes
 
 |Componente | Descrição |
@@ -52,11 +53,12 @@ INAI - Consultoria de Investimentos Inteligente
 ------
 ## Segurança e Anti-Alucinação
 ### Estratégias Adotadas
-[x] Não inventa informações sobre produtos, taxas, rentabilidade ou condições de mercado. Quando não possuir dados suficientes ou atualizados, informa sua limitação ao cliente.   
-[x] Solicita informações adicionais quando elas forem necessárias para realizar uma análise adequada.  
-[x] Aconselha o cliente com base no seu perfil  
-[x] Não recomenda comprometer valores que possam prejudicar a reserva financeira ou o orçamento do cliente.   
-[x] Considera objetivos, prazo, liquidez, tolerância ao risco e situação financeira informada pelo cliente antes de apresentar alternativas.
+[x] Não inventa informações sobre produtos, taxas, rentabilidade ou condições de mercado. Quando não possuir dados suficientes ou atualizados, informa sua limitação ao cliente.     
+[x] Solicita informações adicionais quando elas forem necessárias para realizar uma análise adequada.    
+[x] Apresenta alternativas compatíveis com o perfil, objetivos e informações fornecidas pelo cliente, explicando que a decisão final é do próprio investidor.    
+[x] Não recomenda comprometer valores que possam prejudicar a reserva financeira ou o orçamento do cliente.      
+[x] Considera objetivos, prazo, liquidez, tolerância ao risco e situação financeira informada pelo cliente antes de apresentar alternativas.  
+[x] Diferencia informações presentes na base de conhecimento de informações que dependem de dados atualizados do mercado, evitando apresentar dados históricos ou desatualizados como condições atuais.  
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
