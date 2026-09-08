@@ -90,23 +90,47 @@
 -------------
 ## Métricas de Qualidade
 
-| Métrica | O que avalia | Exemplo de teste |
-|----------|--------|--------|
-| **Assertividade** | O agente respondeu o que foi perguntado? | Perguntar o saldo e receber o valor correto | 
-| **Segurança** | O agente evitou inventar informações? | Perguntar algo fora do contexto e ele admitir que não sabe |
-| **Coerência** | A resposta faz sentido para o perfil do cliente? | Sugerir investimento conservador para cliente conservador |
+| Métrica | O que avalia | Resultado | Evidência |
+|---|---|---|---|
+| Assertividade | Se a INAI responde corretamente utilizando os dados disponíveis | Satisfatório | Rentabilidade do CDB, aporte mínimo do Tesouro Selic e informação indisponível sobre vencimento |
+| Segurança | Se a INAI respeita seus limites e evita inventar informações | Satisfatório | Perguntas sobre cotação do dólar e assuntos fora do escopo |
+| Coerência | Se as respostas são compatíveis com o perfil e contexto do cliente | Parcialmente satisfatório | Teste com perfil conservador |
+| Relevância | Se a resposta atende diretamente à intenção do cliente | Satisfatório | Perguntas factuais respondidas de forma objetiva |
 
+### Resultados
 
-**O que funcionou bem:***  
-- xxx  
+#### O que funcionou bem
 
-**O que pode melhorar:**  
-- xxx  
+- A INAI utiliza os dados disponíveis como fonte de informação.
+- Informações ausentes na base não são inventadas.
+- O agente respeita o escopo financeiro definido.
+- Perguntas fora do escopo são recusadas adequadamente.
+- O perfil do investidor é considerado nas recomendações.
+- A persona e o tom consultivo são mantidos nas interações.
+
+#### O que pode melhorar
+
+- Priorizar uma recomendação quando houver informações suficientes sobre o perfil e objetivo do cliente.
+- Reduzir respostas genéricas ou ofertas de ajuda após perguntas factuais.
+- Implementar métricas automatizadas de latência, tokens e erros.
+- Avaliar a estabilidade da API em ambiente de produção.
+
+### Observação sobre indisponibilidade da API
+
+Durante os testes ocorreram erros `503 UNAVAILABLE` provenientes da API do modelo Gemini.
+
+Essas ocorrências foram tratadas como falhas de disponibilidade de um serviço externo, não como falhas funcionais da lógica da INAI. O mesmo cenário apresentou respostas corretas em execuções posteriores, indicando comportamento intermitente da API.
+
+A aplicação possui mecanismo de tentativa novamente (retry) para erros temporários.
+
+A avaliação de qualidade funcional considera separadamente falhas da aplicação e indisponibilidades do serviço externo.
 
 -------
-## Métricas Avançadas (Opcional)
-Para quem quer explorar mais, algumas métricas técnicas de observabilidade também podem fazer parte da sua solução, como:
+## Métricas Avançadas
 
-- Latência e tempo de resposta;
-- Consumo de tokens e custos;
-- Logs e taxa de erros.
+| Métrica           | Resultado atual             | Observação                                  |
+| ----------------- | --------------------------- | ------------------------------------------- |
+| Latência          | Não mensurada               | Pode variar conforme disponibilidade da API |
+| Consumo de tokens | Não mensurado               | Não há instrumentação implementada          |
+| Taxa de erros     | Observada durante os testes | Ocorreram erros 503 da API                  |
+| Logs              | Parcial                     | Erros podem ser registrados no terminal     |
