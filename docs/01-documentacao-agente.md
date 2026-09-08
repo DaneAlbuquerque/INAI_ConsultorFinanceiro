@@ -54,13 +54,12 @@ flowchart TD
 ```
 
 ### Componentes
+
 | Componente | Descrição |
 |---|---|
-| **Interface** | Interface web desenvolvida em Streamlit, responsável pela interação entre o cliente e a INAI. |
-| **INAI** | Agente responsável por interpretar as solicitações e conduzir o atendimento de forma consultiva. |
-| **System Prompt** | Define a persona, regras de comportamento, limites de atuação e critérios para utilização dos dados. |
-| **Base de Conhecimento** | Arquivos JSON e CSV utilizados como fonte de dados para o atendimento, incluindo informações sobre perfil do investidor, produtos financeiros, histórico e transações. |
-| **LLM** | Modelo Gemini utilizado para interpretar o contexto fornecido e gerar as respostas da INAI. |
+| **Interface** | Aplicação web desenvolvida em Streamlit para interação com o cliente. |
+| **LLM** | Google Gemini, responsável pelo processamento das mensagens e geração das respostas. |
+| **Base de Conhecimento** | Conjunto de arquivos JSON e CSV contendo informações sobre perfil do investidor, produtos financeiros, histórico de atendimento e transações. |
 ------
 ## Segurança e Anti-Alucinação
 ### Estratégias Adotadas
