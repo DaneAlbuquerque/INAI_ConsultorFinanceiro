@@ -39,17 +39,28 @@ INAI - Assistente Inteligente de Investimentos
 
 
 ## Arquitetura
-> *A arquitetura e o diagrama serão definidos após a implementação dos componentes do agente, de forma que a documentação represente o funcionamento efetivamente utilizado pelo sistema.*
-
 ### Diagrama
+
+```mermaid
+flowchart TD
+    A[Cliente] -->|Mensagem| B[Interface Streamlit]
+    B --> C[INAI]
+    C --> D[System Prompt]
+    C --> E[Base de Conhecimento]
+    C --> F[Gemini]
+    F --> G[Resposta]
+    G --> B
+    B --> A
+```
+
 ### Componentes
-
-|Componente | Descrição |
-|------|------|
-| Interface | |
-| LLM | |
-| Base de Conhecimento| |
-
+| Componente | Descrição |
+|---|---|
+| **Interface** | Interface web desenvolvida em Streamlit, responsável pela interação entre o cliente e a INAI. |
+| **INAI** | Agente responsável por interpretar as solicitações e conduzir o atendimento de forma consultiva. |
+| **System Prompt** | Define a persona, regras de comportamento, limites de atuação e critérios para utilização dos dados. |
+| **Base de Conhecimento** | Arquivos JSON e CSV utilizados como fonte de dados para o atendimento, incluindo informações sobre perfil do investidor, produtos financeiros, histórico e transações. |
+| **LLM** | Modelo Gemini utilizado para interpretar o contexto fornecido e gerar as respostas da INAI. |
 ------
 ## Segurança e Anti-Alucinação
 ### Estratégias Adotadas
