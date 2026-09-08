@@ -69,23 +69,19 @@
 1. A INAI deve iniciar o atendimento de forma natural e aguardar a solicitação do cliente, sem apresentar espontaneamente informações do perfil, análise financeira ou recomendações de investimento.
 
 
+## Testes Internos (Fase 02)
 
-## Testes Interno (Fase 02)
+Nesta segunda fase, os testes foram realizados diretamente na aplicação desenvolvida em Streamlit, com o objetivo de verificar o comportamento da INAI em condições próximas à utilização real.
 
-| Critério | 4ª rodada |5ª rodada | 6ª rodada | Resultado |
-|------|:------:|:------:|:------|------|
-| Início do atendimento | 🔴 | 🟢 | | Iniciou o atendimento de forma correta|
-| Dados ausentes | - | 🔴 | | Não Respeita |
-| Rentabilidade do CDB  | - | 🔴 | | Inventa dados |
+As rodadas foram realizadas após os refinamentos efetuados na primeira fase de testes, buscando verificar principalmente o cumprimento das regras do agente, o uso correto das informações disponíveis, o tratamento de dados ausentes e a capacidade de manter respostas coerentes durante a interação.
 
+### Visão geral dos resultados
 
-### Quarta Rodada
-[Prompt 04](https://docs.google.com/document/d/1l9gVqky3OKv2WSco7fcFFNHwl11rd6Vu1_JtUnI0eb8/edit?usp=sharing)  
-[Teste 04 - PDF GEMINI](https://drive.google.com/file/d/1OewB98Zbq43-3p4bbU-GxYMKm1VoD6_o/view?usp=sharing)
-
-### Quinta Rodada
-[Prompt 05]()  
-
+| Critério | 4ª rodada | 5ª rodada | 6ª rodada | Observação |
+|------|:------:|:------:|:------:|------|
+| Início do atendimento | 🔴 | 🟢 | ⏸️ | O comportamento foi corrigido após o refinamento do prompt |
+| Dados ausentes | - | 🔴 | ⏸️ | Necessário reforçar o tratamento de informações não disponíveis |
+| Rentabilidade do CDB | - | 🔴 | ⏸️ | Foi identificada resposta incompatível com os dados disponíveis |
 
 -------------
 ## Métricas de Qualidade
@@ -115,16 +111,6 @@
 - Implementar métricas automatizadas de latência, tokens e erros.
 - Avaliar a estabilidade da API em ambiente de produção.
 
-### Observação sobre indisponibilidade da API
-
-Durante os testes ocorreram erros `503 UNAVAILABLE` provenientes da API do modelo Gemini.
-
-Essas ocorrências foram tratadas como falhas de disponibilidade de um serviço externo, não como falhas funcionais da lógica da INAI. O mesmo cenário apresentou respostas corretas em execuções posteriores, indicando comportamento intermitente da API.
-
-A aplicação possui mecanismo de tentativa novamente (retry) para erros temporários.
-
-A avaliação de qualidade funcional considera separadamente falhas da aplicação e indisponibilidades do serviço externo.
-
 -------
 ## Métricas Avançadas
 
@@ -132,5 +118,26 @@ A avaliação de qualidade funcional considera separadamente falhas da aplicaç�
 | ----------------- | --------------------------- | ------------------------------------------- |
 | Latência          | Não mensurada               | Pode variar conforme disponibilidade da API |
 | Consumo de tokens | Não mensurado               | Não há instrumentação implementada          |
-| Taxa de erros     | Observada durante os testes | Ocorreram erros 503 da API                  |
+| Taxa de erros     | Observada durante os testes | Ocorreram erros 503 e 429 da API            |
 | Logs              | Parcial                     | Erros podem ser registrados no terminal     |
+
+
+-------
+## Ocorrências durante os testes
+
+Durante a execução dos testes, foram observadas indisponibilidades temporárias relacionadas à API do Google Gemini.
+
+Inicialmente, ocorreram respostas com erro `503 UNAVAILABLE`, indicando indisponibilidade temporária do serviço. Para lidar com esse cenário, foi implementado um mecanismo de novas tentativas (retry) para erros 503, utilizando intervalos progressivos entre as tentativas.
+
+Posteriormente, durante novos testes, foi identificado o erro `429 RESOURCE_EXHAUSTED`. Nesse caso, a própria API informou que o limite de requisições do plano gratuito havia sido atingido para o modelo utilizado.
+
+Esse comportamento foi identificado como uma limitação externa da API, não como uma falha na lógica do agente ou na aplicação.
+
+A ocorrência também demonstrou a importância de diferenciar erros de indisponibilidade temporária (`503`) de erros relacionados ao limite de utilização (`429`), evitando novas requisições desnecessárias quando a quota disponível foi excedida.
+
+### Impacto nos testes
+
+A limitação de quota interrompeu temporariamente a execução de novos testes com o modelo. Por esse motivo, alguns cenários previstos para a etapa final de avaliação permanecem pendentes de execução até a liberação da quota.
+
+Os resultados obtidos antes da limitação foram mantidos na documentação e não foram descartados.
+
