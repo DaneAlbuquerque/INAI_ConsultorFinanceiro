@@ -41,7 +41,7 @@
 | Segurança | 🟢 | 🟢 | 🟢 | Não revelou senha |
 
 
-### Primeira Rodada
+### 1ª Rodada
 [Prompt 01](https://docs.google.com/document/d/11wPkoDBjo8qGwbNPvzSKsAghWr1dz8syFKzWrtkWJz4/edit?usp=sharing)  
 [Teste 01 - PDF GEMINI](https://drive.google.com/file/d/16U01KeK18xqIxk-5g_yR6xQlYXjv3Yw7/view?usp=sharing)
 
@@ -52,7 +52,7 @@
 3. Reforçar comportamento conversacional natural.
 4. Reforçar respostas diretas, evitando exposição de informações não solicitadas.
 
-### Segunda Rodada
+### 2ª Rodada
 [Prompt 02](https://docs.google.com/document/d/1BUBxNjikJmQHg4maxYEB5VH_TKX1mB2iLyc6Y271fEU/edit?usp=sharing)  
 [Teste 02 - PDF GEMINI](https://drive.google.com/file/d/1vhT1vWIMwq0V12hqZH8O_0OpYDGy-CI6/view?usp=sharing)
 
@@ -60,7 +60,7 @@
 
 1. Reforçar que a INAI não possui acesso a informações externas ou em tempo real e que, diante de solicitações fora de seu escopo, deve recusar a resposta e redirecionar a conversa para temas relacionados a finanças pessoais e investimentos.
 
-### Terceira Rodada
+### 3ª Rodada
 [Prompt 03](https://docs.google.com/document/d/1X6nzkRLzAa4sFzJkje4Eogpfgqvpwm33_Juja1fNFfI/edit?usp=sharing)  
 [Teste 03 - PDF GEMINI](https://drive.google.com/file/d/14qMiDznW0R_odKMGfS0gvEu1RuOV-6WW/view?usp=sharing)
 
@@ -82,6 +82,30 @@ As rodadas foram realizadas após os refinamentos efetuados na primeira fase de 
 | Início do atendimento | 🔴 | 🟢 | ⏸️ | O comportamento foi corrigido após o refinamento do prompt |
 | Dados ausentes | - | 🔴 | ⏸️ | Necessário reforçar o tratamento de informações não disponíveis |
 | Rentabilidade do CDB | - | 🔴 | ⏸️ | Foi identificada resposta incompatível com os dados disponíveis |
+
+### 4ª Rodada
+**Objetivo:** verificar o comportamento inicial da INAI na aplicação Streamlit, especialmente o início do atendimento e a apresentação da persona.  
+[Prompt 04](https://docs.google.com/document/d/1l9gVqky3OKv2WSco7fcFFNHwl11rd6Vu1_JtUnI0eb8/edit?usp=sharing)  
+[Teste 04 - PDF GEMINI](https://drive.google.com/file/d/1OewB98Zbq43-3p4bbU-GxYMKm1VoD6_o/view?usp=sharing)
+
+**Resultado:** Não atendeu completamente ao critério.
+Durante a rodada, foi identificado que a INAI não iniciou o atendimento conforme o comportamento esperado. O resultado indicou a necessidade de novos ajustes nas instruções relacionadas ao início da conversa e à forma de atuação da persona.
+Os pontos identificados foram utilizados como base para o refinamento realizado antes da rodada seguinte.
+
+### 5ª Rodada
+**Objetivo:** verificar se os ajustes realizados após a 4ª rodada haviam corrigido os comportamentos identificados anteriormente e avaliar o tratamento de informações ausentes e informações específicas dos produtos financeiros.  
+[Prompt 05](#)
+
+**Resultado:** Parcialmente satisfatório.
+O comportamento relacionado ao início do atendimento apresentou melhora e atendeu ao critério esperado.
+Entretanto, durante os testes foram identificados problemas relacionados ao tratamento de informações ausentes e à consulta de características específicas dos produtos financeiros.
+Nos cenários avaliados, a INAI apresentou respostas que não estavam de acordo com a regra estabelecida de utilizar somente informações explicitamente disponíveis para cada produto.
+
+### 6ª Rodada
+**Objetivo:** validar, diretamente na aplicação Streamlit, os ajustes realizados após os problemas identificados na 5ª rodada.  
+[Prompt 06](#)
+
+
 
 -------------
 ## Métricas de Qualidade
