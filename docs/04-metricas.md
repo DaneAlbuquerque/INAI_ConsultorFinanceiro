@@ -159,6 +159,9 @@ Esse comportamento foi identificado como uma limitação externa da API, não co
 
 A ocorrência também demonstrou a importância de diferenciar erros de indisponibilidade temporária (`503`) de erros relacionados ao limite de utilização (`429`), evitando novas requisições desnecessárias quando a quota disponível foi excedida.
 
+
+![Monitoramento da API](https://raw.githubusercontent.com/DaneAlbuquerque/INAI_ConsultorFinanceiro/refs/heads/main/src/images/apigemini.png)
+
 ### Impacto nos testes
 
 A limitação de quota interrompeu temporariamente a execução de novos testes com o modelo. Por esse motivo, alguns cenários previstos para a etapa final de avaliação permanecem pendentes de execução até a liberação da quota.
