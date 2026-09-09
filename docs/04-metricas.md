@@ -79,9 +79,10 @@ As rodadas foram realizadas após os refinamentos efetuados na primeira fase de 
 
 | Critério | 4ª rodada | 5ª rodada | 6ª rodada | Observação |
 |------|:------:|:------:|:------:|------|
-| Início do atendimento | 🔴 | 🟢 | ⏸️ | O comportamento foi corrigido após o refinamento do prompt |
-| Dados ausentes | - | 🔴 | ⏸️ | Necessário reforçar o tratamento de informações não disponíveis |
-| Rentabilidade do CDB | - | 🔴 | ⏸️ | Foi identificada resposta incompatível com os dados disponíveis |
+| Início do atendimento | 🔴 | 🟢 | 🟢 | O comportamento foi corrigido após o refinamento do prompt |
+| Dados ausentes | - | 🔴 | 🟢 | A INAI passou a informar quando o dado não está disponível |
+| Informação dos produtos | - | 🔴 | 🟢 | As informações disponíveis foram recuperadas corretamente |
+| Rentabilidade do CDB | - | 🔴 | 🟢 | A INAI passou a utilizar corretamente a rentabilidade registrada na base |
 
 ### 4ª Rodada
 **Objetivo:** verificar o comportamento inicial da INAI na aplicação Streamlit, especialmente o início do atendimento e a apresentação da persona.  
@@ -102,10 +103,26 @@ Entretanto, durante os testes foram identificados problemas relacionados ao trat
 Nos cenários avaliados, a INAI apresentou respostas que não estavam de acordo com a regra estabelecida de utilizar somente informações explicitamente disponíveis para cada produto.
 
 ### 6ª Rodada
-**Objetivo:** validar, diretamente na aplicação Streamlit, os ajustes realizados após os problemas identificados na 5ª rodada.  
+**Objetivo:** validar, diretamente na aplicação Streamlit, os ajustes realizados após os problemas identificados na 5ª rodada, com foco no tratamento de informações disponíveis na base de conhecimento.      
 [Prompt 06](https://docs.google.com/document/d/12CQcGj4bNAYUTBHVLzHAQf95qFPBC0Z8uEjFq-7d_jw/edit?usp=sharing)
 
+**Pergunta:** Qual é o prazo de vencimento do CDB Liquidez Diária?  
+**Resultado inicial:** A INAI informou que a informação sobre o prazo de vencimento não estava disponível no atendimento.  
+**Problema identificado:** A informação não estava presente na base de dados do produto *CDB Liquidez Diária*.  
+**Refinamento realizado:** Foi adicionado ao `produtos_financeiros.json` o campo:
 
+```
+"prazo_vencimento": "Sem prazo fixo, com liquidez diária" 
+```
+**Novo teste:** A mesma pergunta foi realizada novamente após a atualização da base.  
+**Resultado após o refinamento:** O CDB Liquidez Diária não possui prazo fixo, contando com liquidez diária.    
+
+
+> **Conclusão:** O refinamento foi validado com sucesso. A INAI passou a recuperar a informação adicionada à base de conhecimento e responder corretamente à consulta.  
+
+.  
+![Teste INAI](https://github.com/DaneAlbuquerque/INAI_ConsultorFinanceiro/blob/main/src/images/inai_prazo.png?raw=true)  
+*Resposta da INAI após a inclusão do prazo de vencimento na base de conhecimento.*
 
 -------------
 ## Métricas de Qualidade
