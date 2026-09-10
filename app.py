@@ -278,9 +278,7 @@ def gerar_resposta(pergunta):
     historico_conversa = ""
 
     for mensagem in st.session_state.messages[:-1]:
-        historico_conversa += (
-            f"{mensagem['role']}: {mensagem['content']}\n"
-        )
+        historico_conversa += f"{mensagem['role']}: {mensagem['content']}\n"
 
     prompt_completo = f"""
 {SYSTEM_PROMPT}
@@ -303,8 +301,7 @@ Responda como INAI, seguindo rigorosamente as instruções acima.
     for tentativa in range(5):
         try:
             response = client.models.generate_content(
-                model=MODEL,
-                contents=prompt_completo
+                model=MODEL, contents=prompt_completo
             )
 
             return response.text
@@ -312,12 +309,13 @@ Responda como INAI, seguindo rigorosamente as instruções acima.
         except Exception as erro:
 
             if "503" in str(erro) and tentativa < 4:
-                tempo_espera = 5 * (2 ** tentativa)
+                tempo_espera = 5 * (2**tentativa)
                 time.sleep(tempo_espera)
 
             else:
-               return f"ERRO TEMPORÁRIO DA API:\n\n{erro}"
-            
+                return f"ERRO TEMPORÁRIO DA API:\n\n{erro}"
+
+
 # ==========================================
 # IDENTIDADE VISUAL
 # ==========================================
@@ -431,7 +429,7 @@ st.markdown(
     }
 
     .welcome-title {
-        color: #741B3A;
+        color: #5f0513;
         font-size: 19px;
         font-weight: 700;
         margin-bottom: 10px;
@@ -445,7 +443,7 @@ st.markdown(
     }
 
     .welcome-highlight {
-        color: #741B3A;
+        color: #5f0513;
         font-weight: 600;
     }
 
@@ -477,16 +475,16 @@ st.markdown(
 }
 
 .stButton > button:hover {
-    border-color: #741B3A;
-    color: #741B3A;
+    border-color: #5f0513;
+    color: #5f0513;
     background-color: #FCF8FA;
     box-shadow: 0 6px 16px rgba(116, 27, 58, 0.09);
     transform: translateY(-2px);
 }
 
 .stButton > button:focus {
-    border-color: #741B3A;
-    color: #741B3A;
+    border-color: #5f0513;
+    color: #5f0513;
     box-shadow: 0 0 0 2px #EAD5DE;
 }
 
@@ -545,11 +543,11 @@ hr {
     }
 
 
-   /* ---------- CAMPO DE CHAT ---------- */
+  /* ---------- CAMPO DE CHAT ---------- */
 
 [data-testid="stChatInput"] {
     border-radius: 18px;
-      margin-top: 8px;
+    margin-top: 8px;
 }
 
 [data-testid="stChatInput"] textarea {
@@ -557,10 +555,35 @@ hr {
 }
 
 [data-testid="stChatInput"] textarea:focus {
-    border-color: #741B3A;
-    box-shadow: 0 0 0 1px #741B3A;
+    border-color: #00000;
+    box-shadow: 0 0 0 1px #E5DCE0;
 }
 
+
+/* ---------- CONTAINER EXTERNO DO CHAT ---------- */
+
+[data-testid="stBottom"] {
+    background-color: #5f0513 !important;
+}
+
+[data-testid="stBottom"] > div {
+    background-color: #5f0513 !important;
+}
+
+/* ---------- BOTÃO ENVIAR ---------- */
+
+[data-testid="stChatInput"] button {
+    background-color: #5f0513 !important;
+    color: #FFFFFF !important;
+    border-radius: 50%;
+}
+
+[data-testid="stChatInput"] button:hover {
+    background-color: #5F1730 !important;
+    color: #FFFFFF !important;
+}
+
+  
 
     /* ---------- RESPONSIVIDADE ---------- */
 
@@ -599,9 +622,8 @@ if "messages" not in st.session_state:
 # ==========================================
 # CABEÇALHO
 # ==========================================
-st.markdown("## INAI")
 
-st.caption("Consultoria de Investimentos Inteligente")
+st.image("src/images/bannerINAI.png", use_container_width=True)
 
 # ==========================================
 # BOAS-VINDAS
