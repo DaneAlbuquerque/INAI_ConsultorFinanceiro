@@ -2,6 +2,9 @@
 
 Agente de inteligência artificial desenvolvido como projeto final do **Bootcamp Bradesco 2026**, com o objetivo de auxiliar pessoas que desejam começar a investir, oferecendo informações e orientações sobre investimentos de baixo risco de forma simples, acessível e personalizada.
 
+🌟 [INAI](https://inaiconsultorfinanceiro.streamlit.app/)    
+🎥 [Apresentação INAI](https://drive.google.com/file/d/1WsBwOE0HAfJJennZ84ULpLbr6j_7d3c-/view?usp=sharing)
+
 ---
 
 ## 📌 Sobre o projeto
@@ -329,12 +332,6 @@ O projeto também foi utilizado como oportunidade para explorar, na prática, as
 **Dayane Albuquerque Passos**
 
 Projeto desenvolvido para fins educacionais e de portfólio.
-
----
-
-## Projeto Funcionando
-
-[🎥 Vídeo](https://drive.google.com/file/d/1WsBwOE0HAfJJennZ84ULpLbr6j_7d3c-/view?usp=sharing)
 
 ---
 
