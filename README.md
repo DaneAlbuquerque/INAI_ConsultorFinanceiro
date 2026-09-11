@@ -2,8 +2,6 @@
 
 Agente de inteligência artificial desenvolvido como projeto final do **Bootcamp Bradesco 2026**, com o objetivo de auxiliar pessoas que desejam começar a investir, oferecendo informações e orientações sobre investimentos de baixo risco de forma simples, acessível e personalizada.
 
-> **Status:** 🚧 Em desenvolvimento
-
 ---
 
 ## 📌 Sobre o projeto
@@ -22,14 +20,14 @@ O projeto também foi desenvolvido com foco em **controle de informações e pre
 
 Criar um agente de inteligência artificial capaz de:
 
-* Esclarecer dúvidas sobre investimentos;
-* Auxiliar iniciantes no processo de conhecimento sobre investimentos;
-* Identificar informações relacionadas ao perfil do investidor;
-* Considerar objetivos financeiros, prazo, liquidez e tolerância ao risco;
-* Apresentar alternativas de investimentos de baixo risco compatíveis com o contexto informado;
-* Utilizar uma base de conhecimento estruturada para fundamentar suas respostas;
-* Recusar solicitações fora do seu escopo de atuação;
-* Informar quando determinada informação não está disponível, sem inventar dados.
+- Esclarecer dúvidas sobre investimentos;
+- Auxiliar iniciantes no processo de conhecimento sobre investimentos;
+- Identificar informações relacionadas ao perfil do investidor;
+- Considerar objetivos financeiros, prazo, liquidez e tolerância ao risco;
+- Apresentar alternativas de investimentos de baixo risco compatíveis com o contexto informado;
+- Utilizar uma base de conhecimento estruturada para fundamentar suas respostas;
+- Recusar solicitações fora do seu escopo de atuação;
+- Informar quando determinada informação não está disponível, sem inventar dados.
 
 ---
 
@@ -37,11 +35,11 @@ Criar um agente de inteligência artificial capaz de:
 
 A INAI é direcionada principalmente para pessoas que:
 
-* Desejam começar a investir;
-* Possuem pouco ou nenhum conhecimento sobre investimentos;
-* Buscam alternativas de menor risco;
-* Têm dúvidas sobre produtos financeiros;
-* Desejam compreender melhor a relação entre perfil, objetivos e investimentos.
+- Desejam começar a investir;
+- Possuem pouco ou nenhum conhecimento sobre investimentos;
+- Buscam alternativas de menor risco;
+- Têm dúvidas sobre produtos financeiros;
+- Desejam compreender melhor a relação entre perfil, objetivos e investimentos.
 
 ---
 
@@ -51,9 +49,9 @@ O atendimento é realizado por meio de uma interface desenvolvida em **Streamlit
 
 A mensagem do cliente é processada pela aplicação juntamente com:
 
-* regras e comportamento definidos no System Prompt;
-* informações disponíveis na base de conhecimento;
-* contexto da conversa atual.
+- regras e comportamento definidos no System Prompt;
+- informações disponíveis na base de conhecimento;
+- contexto da conversa atual.
 
 Esse conjunto de informações é enviado ao modelo **Google Gemini**, que interpreta o contexto e gera a resposta da INAI.
 
@@ -85,13 +83,13 @@ A arquitetura detalhada do agente está documentada em:
 
 Nela estão descritos:
 
-* Caso de uso;
-* Persona e tom de voz;
-* Arquitetura;
-* Componentes;
-* Estratégias de segurança;
-* Estratégias de prevenção de alucinações;
-* Limitações do agente.
+- Caso de uso;
+- Persona e tom de voz;
+- Arquitetura;
+- Componentes;
+- Estratégias de segurança;
+- Estratégias de prevenção de alucinações;
+- Limitações do agente.
 
 ---
 
@@ -133,13 +131,13 @@ Contém dados fictícios de transações financeiras utilizados para análises d
 
 A INAI foi projetada para manter uma comunicação:
 
-* **Consultiva**
-* **Leve**
-* **Descontraída**
-* **Didática**
-* **Acessível**
-* **Não julgadora**
-* **Responsável e cautelosa**
+- **Consultiva**
+- **Leve**
+- **Descontraída**
+- **Didática**
+- **Acessível**
+- **Não julgadora**
+- **Responsável e cautelosa**
 
 A proposta é explicar conceitos financeiros de maneira simples, evitando excesso de termos técnicos e mantendo uma comunicação próxima e acolhedora.
 
@@ -151,15 +149,15 @@ Um dos principais objetivos do projeto é evitar que o agente apresente informa�
 
 Para isso, foram definidas regras para que a INAI:
 
-* Não invente taxas ou rentabilidades;
-* Não invente características de produtos financeiros;
-* Informe quando uma informação não estiver disponível;
-* Solicite informações adicionais quando forem necessárias;
-* Considere o contexto financeiro fornecido pelo cliente;
-* Não forneça senhas, credenciais ou informações sensíveis;
-* Não apresente informações externas ou em tempo real como se fossem dados disponíveis;
-* Não recomende investimentos incompatíveis com o perfil informado;
-* Não garanta rentabilidade ou resultados futuros.
+- Não invente taxas ou rentabilidades;
+- Não invente características de produtos financeiros;
+- Informe quando uma informação não estiver disponível;
+- Solicite informações adicionais quando forem necessárias;
+- Considere o contexto financeiro fornecido pelo cliente;
+- Não forneça senhas, credenciais ou informações sensíveis;
+- Não apresente informações externas ou em tempo real como se fossem dados disponíveis;
+- Não recomende investimentos incompatíveis com o perfil informado;
+- Não garanta rentabilidade ou resultados futuros.
 
 A documentação completa dessas estratégias está disponível em:
 
@@ -173,14 +171,14 @@ O projeto possui uma documentação específica para acompanhamento dos testes r
 
 Os testes foram utilizados para avaliar aspectos como:
 
-* Consulta ao perfil;
-* Análise de gastos;
-* Consulta e comparação de investimentos;
-* Continuidade do atendimento;
-* Respeito ao escopo;
-* Segurança;
-* Uso adequado da base de conhecimento;
-* Naturalidade das respostas.
+- Consulta ao perfil;
+- Análise de gastos;
+- Consulta e comparação de investimentos;
+- Continuidade do atendimento;
+- Respeito ao escopo;
+- Segurança;
+- Uso adequado da base de conhecimento;
+- Naturalidade das respostas.
 
 Os testes também foram realizados em diferentes rodadas de refinamento do prompt, permitindo comparar o comportamento da INAI antes e depois das alterações.
 
@@ -213,13 +211,13 @@ Os resultados e observações detalhadas estão disponíveis na documentação d
 
 ## 🛠️ Tecnologias utilizadas
 
-* **Python**
-* **Streamlit**
-* **Google Gemini**
-* **Pandas**
-* **JSON**
-* **CSV**
-* **Google Gen AI SDK**
+- **Python**
+- **Streamlit**
+- **Google Gemini**
+- **Pandas**
+- **JSON**
+- **CSV**
+- **Google Gen AI SDK**
 
 ---
 
@@ -291,13 +289,13 @@ Após a inicialização, o Streamlit disponibilizará a aplicação localmente.
 
 A INAI possui algumas limitações importantes:
 
-* Não possui acesso a informações de mercado em tempo real;
-* Não consulta cotações externas;
-* Não substitui um profissional financeiro habilitado;
-* Não garante resultados ou rentabilidade futura;
-* Atua dentro do escopo definido para finanças pessoais e investimentos;
-* Depende da disponibilidade do serviço de inteligência artificial utilizado;
-* A etapa de testes da integração com o modelo ainda está em andamento.
+- Não possui acesso a informações de mercado em tempo real;
+- Não consulta cotações externas;
+- Não substitui um profissional financeiro habilitado;
+- Não garante resultados ou rentabilidade futura;
+- Atua dentro do escopo definido para finanças pessoais e investimentos;
+- Depende da disponibilidade do serviço de inteligência artificial utilizado;
+- A etapa de testes da integração com o modelo ainda está em andamento.
 
 ---
 
@@ -316,13 +314,13 @@ Este projeto foi desenvolvido como **projeto final do Bootcamp Bradesco 2026**, 
 
 O projeto também foi utilizado como oportunidade para explorar, na prática, aspectos de:
 
-* Desenvolvimento de aplicações com IA;
-* Engenharia de prompts;
-* Tratamento de contexto;
-* Estruturação de bases de conhecimento;
-* Testes de comportamento de agentes;
-* Segurança e prevenção de alucinações;
-* Documentação técnica.
+- Desenvolvimento de aplicações com IA;
+- Engenharia de prompts;
+- Tratamento de contexto;
+- Estruturação de bases de conhecimento;
+- Testes de comportamento de agentes;
+- Segurança e prevenção de alucinações;
+- Documentação técnica.
 
 ---
 
@@ -334,11 +332,9 @@ Projeto desenvolvido para fins educacionais e de portfólio.
 
 ---
 
-## 📌 Status do projeto
+## Projeto Funcionando
 
-🚧 **Em desenvolvimento**
-
-A aplicação funcional e sua documentação principal estão estruturadas. A etapa de testes continua em andamento, especialmente para avaliar de forma mais abrangente a integração com o modelo de inteligência artificial e realizar os refinamentos finais.
+[🎥 Vídeo](https://drive.google.com/file/d/1WsBwOE0HAfJJennZ84ULpLbr6j_7d3c-/view?usp=sharing)
 
 ---
 

@@ -40,6 +40,4 @@ Não é só um chatbot que responde perguntas. A proposta é conversar como uma 
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+[🎥 Vídeo](https://drive.google.com/file/d/1WsBwOE0HAfJJennZ84ULpLbr6j_7d3c-/view?usp=sharing)
